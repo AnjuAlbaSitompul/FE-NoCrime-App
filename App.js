@@ -1,20 +1,25 @@
+import 'react-native-reanimated'
+import 'react-native-gesture-handler'
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Navigation from './navigation/Navigation';
+import { COLORS } from './constants/appearance';
+import Toast from 'react-native-toast-message';
+import { toastConfig } from './component/toast/toast-config';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <>
       <StatusBar style="auto" />
-    </View>
+      <Navigation />
+      <Toast config={toastConfig} />
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    backgroundColor: COLORS.background
+  }
 });
